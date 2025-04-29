@@ -51,12 +51,6 @@ function Home() {
         </Link>
       </section>
 
-      {/* Footer Section */}
-      <footer className="bg-[#1A1A1A] text-center py-4 mt-10">
-        <p className="text-[#E5E5E5] text-sm">
-          © {new Date().getFullYear()} Emmanuel. All rights reserved.
-        </p>
-      </footer>
 
     </div>
   );
