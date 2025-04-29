@@ -3,7 +3,7 @@ function Footer() {
     <footer className="bg-black text-gray-400 py-6 mt-10">
       <div className="max-w-4xl mx-auto text-center">
         <p className="mb-4">
-          © {new Date().getFullYear()} Emmanuel. Tous droits réservés.
+          © {new Date().getFullYear()} ManuTech. Tous droits réservés.
         </p>
 
         <div className="flex justify-center space-x-6">
