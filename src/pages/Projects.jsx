@@ -12,7 +12,7 @@ const Projects = () => {
   return (
     <section id="projects" className={`py-16 ${darkBg} ${darkText}`}>
       <div className="container mx-auto px-4">
-        <h2 className={`text-3xl font-bold mb-10 text-center ${neonGreen}`}>Mes Projets</h2>
+        <h1 className={`text-3xl font-bold mb-10 text-center ${neonGreen}`}>Mes Projets</h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sites.map((site, index) => (
             <div key={index} className={`${darkBgAlt} shadow-md rounded-lg overflow-hidden border ${neonGreenBorder}`}>
