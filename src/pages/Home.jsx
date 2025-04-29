@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import photoReact from '../assets/photo-accueil.png'
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 
@@ -38,18 +39,19 @@ function Home() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <a
-              href="/about"
+            <Link
+              to="/about"
               className="bg-green-500 hover:bg-green-600 text-gray-900 font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg"
             >
               En savoir plus
-            </a>
-            <a
-              href="/contact"
+            </Link>
+
+            <Link
+              to="/contact"
               className="bg-transparent border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-gray-900 font-semibold py-3 px-8 rounded-lg transition duration-300"
             >
               Me contacter
-            </a>
+            </Link>
           </div>
 
           {/* Social Media Icons */}
