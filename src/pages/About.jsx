@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Code, Award, Layers, Monitor, Smartphone, Cpu, Database, Settings, Globe, Book, Zap, Send, Terminal} from 'lucide-react';
+import { 
+  Code, Award, Layers, Monitor, Smartphone, Cpu, Database, Settings, 
+  Globe, Book, Zap, Send, Terminal, FileDown, Briefcase, User, Calendar, 
+  GraduationCap, Building
+} from 'lucide-react';
 
 function About() {
   // State for expanded sections and animations
@@ -131,6 +135,44 @@ function About() {
     }
   ];
 
+  // Parcours professionnel data
+  const experienceItems = [
+    {
+      title: "Développeur Frontend",
+      company: "TechInnovate",
+      period: "2023 - Présent",
+      description: "Développement d'interfaces utilisateur réactives avec React et optimisation des performances."
+    },
+    {
+      title: "Développeur Web Junior",
+      company: "WebSolutions",
+      period: "2022 - 2023",
+      description: "Création de sites web responsives et intégration de systèmes de gestion de contenu."
+    },
+    {
+      title: "Stage en développement",
+      company: "DigitalCraft",
+      period: "2021 - 2022",
+      description: "Participation à des projets d'équipe et apprentissage des méthodologies agiles."
+    }
+  ];
+
+  // Formation data
+  const educationItems = [
+    {
+      degree: "Master en Développement Web",
+      institution: "École Supérieure du Numérique",
+      year: "2022",
+      description: "Spécialisation en technologies web modernes et développement full-stack."
+    },
+    {
+      degree: "Licence en Informatique",
+      institution: "Université Tech",
+      year: "2020",
+      description: "Fondamentaux de la programmation, algorithmes et structures de données."
+    }
+  ];
+
   return (
     <div className={`min-h-screen ${theme.darkBg} ${theme.darkText} font-sans`}>
       {/* Hero section with parallax effect */}
@@ -173,6 +215,16 @@ function About() {
                 </div>
                 <h3 className="text-2xl font-semibold text-center mb-2 text-white">ManuTech</h3>
                 <p className="text-center text-gray-400">Solutions de développement sur mesure</p>
+                
+                {/* Ajout du bouton de téléchargement de CV */}
+                <a 
+                  href="/assets/files/cv.pdf" 
+                  download 
+                  className={`mt-4 flex items-center px-4 py-2 ${theme.neonGreenBg} text-black rounded-md font-medium hover:bg-green-300 transition-all duration-300`}
+                >
+                  <FileDown size={18} className="mr-2" />
+                  Télécharger CV
+                </a>
               </div>
             </div>
           </div>
@@ -185,6 +237,7 @@ function About() {
           <div className="flex overflow-x-auto no-scrollbar">
             {[
               { id: 'philosophy', label: 'Philosophie' },
+              { id: 'resume', label: 'CV & Parcours' }, // Nouvel onglet
               { id: 'expertise', label: 'Expertise' },
               { id: 'services', label: 'Services' },
               { id: 'process', label: 'Processus' }
@@ -260,6 +313,166 @@ function About() {
                   Je participe régulièrement à des conférences tech et contribue à des projets open source
                   pour redonner à la communauté qui m'a tant appris.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CV & Parcours Section */}
+        <div id="resume" className={`animate-on-scroll ${activeTab === 'resume' ? 'block' : 'hidden'}`}>
+          <div className="mb-12">
+            <div className="flex justify-between items-center mb-8">
+              <h2 className={`text-3xl font-bold ${theme.neonGreen}`}>CV & Parcours professionnel</h2>
+              <a 
+                href="/assets/files/cv.pdf" 
+                download 
+                className={`flex items-center px-6 py-3 ${theme.neonGreenBg} text-black rounded-lg font-medium hover:bg-green-300 transition-all duration-300 shadow-lg`}
+                style={{ boxShadow: '0 0 15px rgba(74, 222, 128, 0.3)' }}
+              >
+                <FileDown size={20} className="mr-2" />
+                Télécharger mon CV complet
+              </a>
+            </div>
+            
+            {/* Expérience professionnelle */}
+            <div className="mb-10">
+              <h3 className={`text-2xl font-semibold mb-6 flex items-center ${theme.neonGreen}`}>
+                <Briefcase size={24} className="mr-3" />
+                Expérience professionnelle
+              </h3>
+              
+              <div className="space-y-6">
+                {experienceItems.map((item, index) => (
+                  <div 
+                    key={index} 
+                    className={`${theme.darkBgAlt} p-6 rounded-lg border border-gray-800 hover:border-green-400/50 transition-all duration-300`}
+                    style={{ boxShadow: '0 0 15px rgba(0, 0, 0, 0.3)' }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-semibold text-white">{item.title}</h4>
+                      <span className="flex items-center text-gray-400 text-sm">
+                        <Calendar size={16} className="mr-1" />
+                        {item.period}
+                      </span>
+                    </div>
+                    <div className="flex items-center mb-3 text-gray-300">
+                      <Building size={16} className="mr-2" />
+                      {item.company}
+                    </div>
+                    <p className="text-gray-400">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Formation */}
+            <div className="mb-10">
+              <h3 className={`text-2xl font-semibold mb-6 flex items-center ${theme.neonGreen}`}>
+                <GraduationCap size={24} className="mr-3" />
+                Formation
+              </h3>
+              
+              <div className="space-y-6">
+                {educationItems.map((item, index) => (
+                  <div 
+                    key={index} 
+                    className={`${theme.darkBgAlt} p-6 rounded-lg border border-gray-800 hover:border-green-400/50 transition-all duration-300`}
+                    style={{ boxShadow: '0 0 15px rgba(0, 0, 0, 0.3)' }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-semibold text-white">{item.degree}</h4>
+                      <span className="text-gray-400 text-sm">{item.year}</span>
+                    </div>
+                    <div className="flex items-center mb-3 text-gray-300">
+                      <Building size={16} className="mr-2" />
+                      {item.institution}
+                    </div>
+                    <p className="text-gray-400">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Certifications & Autres */}
+            <div className="mb-10">
+              <h3 className={`text-2xl font-semibold mb-6 flex items-center ${theme.neonGreen}`}>
+                <Award size={24} className="mr-3" />
+                Certifications & Compétences additionnelles
+              </h3>
+              
+              <div className={`${theme.darkBgAlt} p-6 rounded-lg border border-gray-800`}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="text-lg font-medium text-white mb-3">Certifications</h4>
+                    <ul className="space-y-2 text-gray-300">
+                      <li className="flex items-center">
+                        <div className={`w-2 h-2 rounded-full ${theme.neonGreenBg} mr-2`}></div>
+                        Certification React Advanced - 2023
+                      </li>
+                      <li className="flex items-center">
+                        <div className={`w-2 h-2 rounded-full ${theme.neonGreenBg} mr-2`}></div>
+                        AWS Cloud Practitioner - 2022
+                      </li>
+                      <li className="flex items-center">
+                        <div className={`w-2 h-2 rounded-full ${theme.neonGreenBg} mr-2`}></div>
+                        Google Web Development - 2021
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-lg font-medium text-white mb-3">Langues</h4>
+                    <ul className="space-y-2 text-gray-300">
+                      <li className="flex items-center">
+                        <div className={`w-2 h-2 rounded-full ${theme.neonGreenBg} mr-2`}></div>
+                        Français - Langue maternelle
+                      </li>
+                      <li className="flex items-center">
+                        <div className={`w-2 h-2 rounded-full ${theme.neonGreenBg} mr-2`}></div>
+                        Anglais - Courant (TOEIC 900)
+                      </li>
+                      <li className="flex items-center">
+                        <div className={`w-2 h-2 rounded-full ${theme.neonGreenBg} mr-2`}></div>
+                        Espagnol - Intermédiaire
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Portfolio rapide */}
+            <div className="mb-6">
+              <h3 className={`text-2xl font-semibold mb-6 flex items-center ${theme.neonGreen}`}>
+                <Monitor size={24} className="mr-3" />
+                Projets récents
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[1, 2, 3].map((item) => (
+                  <div 
+                    key={item} 
+                    className={`${theme.darkBgAlt} p-4 rounded-lg border border-gray-800 hover:border-green-400/50 transition-all duration-300`}
+                  >
+                    <div className="bg-gray-800 h-32 rounded mb-3 flex items-center justify-center">
+                      <Code size={32} className={theme.neonGreen} />
+                    </div>
+                    <h4 className="text-white font-medium mb-1">Projet {item}</h4>
+                    <p className="text-gray-400 text-sm mb-2">Description courte du projet {item}</p>
+                    <Link to={`/portfolio/projet-${item}`} className={`text-sm ${theme.neonGreen} hover:underline inline-flex items-center`}>
+                      Voir détails <Zap size={14} className="ml-1" />
+                    </Link>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="text-center mt-6">
+                <Link 
+                  to="/portfolio" 
+                  className={`inline-flex items-center px-6 py-2 border ${theme.neonGreenBorder} text-green-400 rounded-lg hover:bg-green-400/10 transition-all duration-300`}
+                >
+                  Voir tout mon portfolio <Zap size={16} className="ml-2" />
+                </Link>
               </div>
             </div>
           </div>
@@ -439,13 +652,23 @@ function About() {
             Vous avez un projet qui nécessite une expertise technique avancée ? 
             Discutons de la façon dont je peux vous aider à transformer votre vision en réalité.
           </p>
-          <Link 
-            to="/contact" 
-            className={`inline-flex items-center px-8 py-3 ${theme.neonGreenBg} text-black font-medium rounded-lg hover:bg-green-300 transition duration-300 text-lg`}
-          >
-            <Send size={20} className="mr-2" />
-            Me contacter
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link 
+              to="/contact" 
+              className={`inline-flex items-center px-8 py-3 ${theme.neonGreenBg} text-black font-medium rounded-lg hover:bg-green-300 transition duration-300 text-lg`}
+            >
+              <Send size={20} className="mr-2" />
+              Me contacter
+            </Link>
+            <a 
+              href="/assets/files/cv.pdf" 
+              download 
+              className="inline-flex items-center px-8 py-3 bg-transparent border-2 border-green-400 text-green-400 font-medium rounded-lg hover:bg-green-400/10 transition duration-300 text-lg"
+            >
+              <FileDown size={20} className="mr-2" />
+              Télécharger mon CV
+            </a>
+          </div>
         </div>
       </div>
     </div>
