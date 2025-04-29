@@ -164,7 +164,7 @@ function About() {
                 </p>
               </div>
               
-              <div className={`${theme.darkBgAlt} p-6 rounded-lg border border-gray-800 flex flex-col items-center justify-center transform relative bottom-14 hover:scale-105 transition-all duration-300`}
+              <div className={`${theme.darkBgAlt} p-6 rounded-lg border border-gray-800 flex flex-col items-center justify-center transform relative hover:scale-105 transition-all duration-300`}
                    style={{ boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)' }}>
                 <div className={`flex items-center justify-center w-20 h-20 mb-4 ${theme.darkBg} rounded-full border-2 ${theme.neonGreenBorder}`}
                      style={{ boxShadow: '0 0 15px rgba(74, 222, 128, 0.4)' }}>

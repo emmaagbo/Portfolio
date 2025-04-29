@@ -1,10 +1,17 @@
 // src/data/projectsData.js
+import image1 from '../assets/projects-photo/image1.png'
+import image2 from '../assets/projects-photo/image2.jpg'
+import image3 from '../assets/projects-photo/image3.jpg'
+import image4 from '../assets/projects-photo/image4.jpg'
+import image5 from '../assets/projects-photo/image5.jpg'
+import image6 from '../assets/projects-photo/image6.svg'
+
 
 const sites = [
   {
     title: "E-commerce Platform",
     description: "Plateforme de commerce électronique complète avec panier, paiement et gestion des commandes.",
-    image: "/api/placeholder/600/400",
+    image: image1,
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
     role: "Développeur Full Stack",
     challenges: "Optimisation des performances et sécurisation des paiements",
@@ -15,7 +22,7 @@ const sites = [
   {
     title: "Portfolio Photography",
     description: "Site portfolio responsive pour photographe professionnel avec galerie dynamique.",
-    image: "/api/placeholder/600/400",
+    image: image2,
     technologies: ["Vue.js", "Tailwind CSS", "Firebase"],
     role: "Développeur Frontend",
     challenges: "Animation fluide et optimisation des images",
@@ -26,7 +33,7 @@ const sites = [
   {
     title: "Task Management App",
     description: "Application de gestion de tâches avec fonctionnalités de collaboration en temps réel.",
-    image: "/api/placeholder/600/400",
+    image: image3,
     technologies: ["React", "Redux", "Express", "Socket.io"],
     role: "Lead Developer",
     challenges: "Synchronisation en temps réel entre utilisateurs",
@@ -37,7 +44,7 @@ const sites = [
   {
     title: "Blog CMS",
     description: "Système de gestion de contenu personnalisé pour blog avec éditeur WYSIWYG.",
-    image: "/api/placeholder/600/400",
+    image: image4,
     technologies: ["Next.js", "GraphQL", "Prisma"],
     role: "Développeur Backend",
     challenges: "Création d'un système d'authentification robuste",
@@ -48,7 +55,7 @@ const sites = [
   {
     title: "Fitness Tracker",
     description: "Application mobile de suivi de fitness avec visualisation des progrès.",
-    image: "/api/placeholder/600/400",
+    image: image5,
     technologies: ["React Native", "TypeScript", "Firebase"],
     role: "Développeur Mobile",
     challenges: "Intégration de capteurs et graphiques de progression",
@@ -59,7 +66,7 @@ const sites = [
   {
     title: "Dashboard Analytics",
     description: "Tableau de bord d'analyse de données pour entreprise avec visualisations interactives.",
-    image: "/api/placeholder/600/400",
+    image: image6,
     technologies: ["React", "D3.js", "Node.js", "PostgreSQL"],
     role: "Développeur Full Stack",
     challenges: "Traitement de grandes quantités de données en temps réel",

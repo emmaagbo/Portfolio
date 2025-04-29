@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import photoReact from '../assets/photo-accueil.png'
+import appli from '../assets/about-photo/appli.jpg';
+import bord from '../assets/about-photo/bord.jpg';
+import comm from '../assets/about-photo/e-comm.jpg';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 
 function Home() {
@@ -27,7 +30,7 @@ function Home() {
           </div>
 
           <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-6">
-            Salut, moi c'est Emmanuel
+            Salut, moi c'est Emmanuel AGBOTOEDO Mahoukpégo
           </h1>
           
           <h2 className="text-2xl md:text-3xl text-gray-300 mb-8">
@@ -59,7 +62,7 @@ function Home() {
             <a href="https://github.com/emmaagbo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors">
+            <a href="https://www.linkedin.com/in/emmanuel-mahoukp%C3%A9go-agbotoedo-50a6bb351" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors">
               <Linkedin size={24} />
             </a>
             <a href="mailto:mahoukpegoemmanuel@gmail.com" className="text-gray-400 hover:text-green-400 transition-colors">
@@ -88,7 +91,7 @@ function Home() {
             {/* Project Card 1 */}
             <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
               <div className="h-48 bg-gray-700 flex items-center justify-center">
-                <img src="/api/placeholder/400/300" alt="Projet 1" className="w-full h-full object-cover" />
+                <img src={appli} alt="Projet 1" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-green-400">Application Mobile</h3>
@@ -100,7 +103,7 @@ function Home() {
             {/* Project Card 2 */}
             <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
               <div className="h-48 bg-gray-700 flex items-center justify-center">
-                <img src="/api/placeholder/400/300" alt="Projet 2" className="w-full h-full object-cover" />
+                <img src={comm} alt="Projet 2" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-green-400">Site E-commerce</h3>
@@ -112,7 +115,7 @@ function Home() {
             {/* Project Card 3 */}
             <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
               <div className="h-48 bg-gray-700 flex items-center justify-center">
-                <img src="/api/placeholder/400/300" alt="Projet 3" className="w-full h-full object-cover" />
+                <img src={bord} alt="Projet 3" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-green-400">Tableau de Bord</h3>
