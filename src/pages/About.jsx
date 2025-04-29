@@ -159,8 +159,9 @@ function About() {
               <div className="md:col-span-2">
                 <h2 className="text-3xl font-semibold mb-4 text-white">Développeur Junior</h2>
                 <p className="text-xl text-gray-300 leading-relaxed">
-                  Avec une bonne d'expérience dans la création d'applications web et mobiles performantes 
-                  et innovantes. Je transforme les idées complexes en solutions techniques élégantes.
+                  Avec une bonne expérience dans la création d'applications web et mobiles performantes et innovantes. Je transforme les idées complexes en solutions techniques élégantes.
+                  Je suis passionné par l'optimisation des performances et l'expérience utilisateur.
+                  Toujours curieux, j'aime apprendre de nouvelles technologies pour améliorer mes projets.
                 </p>
               </div>
               
