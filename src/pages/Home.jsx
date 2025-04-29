@@ -17,7 +17,7 @@ function Home() {
         <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Avatar/Profile Image */}
           <div className="mb-8 flex justify-center">
-            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-green-400 shadow-lg">
+            <div className="relative w-40 h-55 rounded-full overflow-hidden border-4 border-green-400 shadow-lg">
               <img 
                 src={photoReact} 
                 alt="Emmanuel" 
@@ -56,7 +56,7 @@ function Home() {
 
           {/* Social Media Icons */}
           <div className="flex justify-center space-x-6 mb-16">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors">
+            <a href="https://github.com/emmaagbo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors">
               <Github size={24} />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors">
@@ -68,7 +68,7 @@ function Home() {
           </div>
 
           {/* Scroll Down Indicator */}
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-15 left-1/2 transform -translate-x-1/2 animate-bounce">
             <ChevronDown size={32} className="text-green-400" />
           </div>
         </div>
@@ -123,12 +123,12 @@ function Home() {
           </div>
           
           <div className="text-center mt-12">
-            <a
-              href="/projects"
+            <Link
+              to="/projects"
               className="bg-transparent border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-gray-900 font-semibold py-3 px-8 rounded-lg transition duration-300"
             >
               Voir tous mes projets
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -164,12 +164,12 @@ function Home() {
           </div>
           
           <div className="text-center mt-12">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="bg-green-500 hover:bg-green-600 text-gray-900 font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg"
             >
               Formulaire de contact
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Code, Award, Layers, Monitor, Smartphone, Cpu, Database, Settings, ChevronDown, ChevronRight, Github, Globe, Book, Zap, Send, Terminal} from 'lucide-react';
+import { Code, Award, Layers, Monitor, Smartphone, Cpu, Database, Settings, Globe, Book, Zap, Send, Terminal} from 'lucide-react';
 
 function About() {
   // State for expanded sections and animations
@@ -157,14 +157,14 @@ function About() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
               <div className="md:col-span-2">
-                <h2 className="text-3xl font-semibold mb-4 text-white">Développeur Senior</h2>
+                <h2 className="text-3xl font-semibold mb-4 text-white">Développeur Junior</h2>
                 <p className="text-xl text-gray-300 leading-relaxed">
-                  Avec plus de 10 ans d'expérience dans la création d'applications web et mobiles performantes 
+                  Avec une bonne d'expérience dans la création d'applications web et mobiles performantes 
                   et innovantes. Je transforme les idées complexes en solutions techniques élégantes.
                 </p>
               </div>
               
-              <div className={`${theme.darkBgAlt} p-6 rounded-lg border border-gray-800 flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300`}
+              <div className={`${theme.darkBgAlt} p-6 rounded-lg border border-gray-800 flex flex-col items-center justify-center transform relative bottom-14 hover:scale-105 transition-all duration-300`}
                    style={{ boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)' }}>
                 <div className={`flex items-center justify-center w-20 h-20 mb-4 ${theme.darkBg} rounded-full border-2 ${theme.neonGreenBorder}`}
                      style={{ boxShadow: '0 0 15px rgba(74, 222, 128, 0.4)' }}>

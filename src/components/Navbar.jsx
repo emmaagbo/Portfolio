@@ -1,17 +1,23 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import {Code} from 'lucide-react'
+
+const theme = {
+  neonGreen: "text-green-400", 
+}
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="bg-black shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
+        <div className="flex justify-between h-24 items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-4xl font-bold text-green-400">
-              Manu<span className="text-green-200">Tech</span>
+            <Link to="/" className="text-4xl font-bold text-green-400 flex">
+              M<Code size={40} className={theme.neonGreen} />nu<span className="text-green-200">Tech</span>
+              {/*<Code size={40} className={theme.neonGreen} />*/}
             </Link>
           </div>
 
