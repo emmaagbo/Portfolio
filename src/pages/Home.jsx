@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import photoReact from '../assets/photo-accueil.png'
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 
 function Home() {
@@ -17,7 +18,7 @@ function Home() {
           <div className="mb-8 flex justify-center">
             <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-green-400 shadow-lg">
               <img 
-                src="/api/placeholder/400/400" 
+                src={photoReact} 
                 alt="Emmanuel" 
                 className="w-full h-full object-cover"
               />
