@@ -15,10 +15,10 @@ function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 text-white">
-      {/* Hero Section with Animation */}
-      <section className="relative h-screen flex items-center justify-center px-4">
+      {/* Hero Section avec Animation */}
+      <section className="relative h-screen flex items-center justify-center px-4 m-12">
         <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          {/* Avatar/Profile Image */}
+          {/* Profil Image */}
           <div className="mb-8 flex justify-center">
             <div className="relative w-40 h-55 rounded-full overflow-hidden border-4 border-green-400 shadow-lg">
               <img 
@@ -57,7 +57,7 @@ function Home() {
             </Link>
           </div>
 
-          {/* Social Media Icons */}
+          {/* Icons reseaux sociaux */}
           <div className="flex justify-center space-x-6 mb-16">
             <a href="https://github.com/emmaagbo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors">
               <Github size={24} />
@@ -71,13 +71,13 @@ function Home() {
           </div>
 
           {/* Scroll Down Indicator */}
-          <div className="absolute bottom-15 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 animate-bounce">
             <ChevronDown size={32} className="text-green-400" />
           </div>
         </div>
       </section>
 
-      {/* Projets Section with Cards */}
+      {/* Section Projects avec Cardre */}
       <section className="py-20 px-4 bg-gray-800">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-2 text-green-400">Mes Projets</h2>

@@ -149,7 +149,7 @@ const Projects = () => {
           ))}
         </div>
         
-        {/* Modal pour les détails du projet */}
+        {/* Model pour les détails du projet */}
         {selectedProject && (
           <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4" onClick={closeProjectDetails}>
             <div 

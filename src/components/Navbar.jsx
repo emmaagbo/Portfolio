@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+//import { ReactComponent as Logo} from '../assets/logo-manu.svg'
+import Logo from '../assets/logo-manu.svg'
 import {Code} from 'lucide-react';
 
 
@@ -13,10 +15,13 @@ function Navbar() {
     <nav className="bg-black shadow-md">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
         <div className="flex justify-between h-24 items-center">
+
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="text-4xl font-bold text-green-400 flex">
-              M<Code size={40} className={theme.neonGreen}/>nu<span className="text-green-200">Tech</span>
+              {/*<Logo className="h-10 w-10"/>*/}
+              <img src={Logo} alt='logo' className="h-20"/>
+              {/*M<Code size={40} className={theme.neonGreen}/>nu<span className="text-green-200">Tech</span>*\}
               {/*<Code size={40} className={theme.neonGreen} />*/}
             </Link>
           </div>
@@ -24,13 +29,13 @@ function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center">
             <Link to="/" className="text-green-400 hover:text-green-200 transition">
-              Home
+              Accueil
             </Link>
             <Link to="/about" className="text-green-400 hover:text-green-200 transition">
-              About
+              A-propos
             </Link>
             <Link to="/projects" className="text-green-400 hover:text-green-200 transition">
-              Projects
+              Projets
             </Link>
             <Link to="/contact" className="text-green-400 hover:text-green-200 transition">
               Contact
