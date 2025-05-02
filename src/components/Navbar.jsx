@@ -1,48 +1,41 @@
-import { Link } from 'react-router-dom';
-import { useState} from 'react';
-import Logo from '../assets/logo-2.svg'
-import {Code} from 'lucide-react';
-
-const theme = {
-  neonGreen: 'text-green-400'
-}
+import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import Logo from '../assets/logo-2.svg';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isFilter, setIsFilter] = useState('Acceuil')
-  {/**useEffect(()=>{
-    const nav =()=>
-  }) */}
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
+
+  const linkClass = (path) =>
+    isActive(path)
+      ? 'text-green-400 bg-gray-900 px-3 py-2 rounded-md'
+      : 'text-green-400 hover:text-green-200 hover:bg-gray-800 px-3 py-2 rounded-md transition';
+
+  const mobileLinkClass = (path) =>
+    isActive(path)
+      ? 'block bg-gray-900 py-2 px-3 rounded-md text-green-400'
+      : 'block text-green-400 hover:text-green-200 py-2 px-3';
 
   return (
-    <nav className="bg-black shadow-md">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-        <div className="flex justify-between h-24 items-center">
-
+    <nav className="bg-black shadow-md w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          
           {/* Logo */}
-          <div className="flex items-center">
-            <Link to="/" className="text-4xl font-bold text-green-400 flex">
-              {/*<Logo className="h-10 w-10"/>*/}
-              <img src={Logo} alt='logo' className="h-40"/>
-              {/*<Code size={40} className={theme.neonGreen} />*/}
-              {/**M<Code size={40} className={theme.neonGreen}/>nu<span className="text-green-200">Tech</span> */}
+          <div className="flex-shrink-0 flex items-center">
+            <Link to="/">
+              <img src={Logo} alt="Logo" className="h-12 sm:h-16 object-contain" />
             </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center nom">
-            <Link to="/" className="text-green-400 hover:text-green-200 transition translate-color">
-              Accueil
-            </Link>
-            <Link to="/about" className="text-green-400 hover:text-green-200 transition">
-              A-propos
-            </Link>
-            <Link to="/projects" className="text-green-400 hover:text-green-200 transition">
-              Projets
-            </Link>
-            <Link to="/contact" className="text-green-400 hover:text-green-200 transition">
-              Contact
-            </Link>
+          <div className="hidden md:flex space-x-4">
+            <Link to="/" className={linkClass('/')}>Accueil</Link>
+            <Link to="/about" className={linkClass('/about')}>A-propos</Link>
+            <Link to="/projects" className={linkClass('/projects')}>Projets</Link>
+            <Link to="/contact" className={linkClass('/contact')}>Contact</Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -65,19 +58,11 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-black px-4 pt-4 pb-2 space-y-2">
-          <Link to="/" onClick={() => setIsOpen(false)} className="block text-green-400 hover:text-green-200">
-            Home
-          </Link>
-          <Link to="/about" onClick={() => setIsOpen(false)} className="block text-green-400 hover:text-green-200">
-            About
-          </Link>
-          <Link to="/projects" onClick={() => setIsOpen(false)} className="block text-green-400 hover:text-green-200">
-            Projects
-          </Link>
-          <Link to="/contact" onClick={() => setIsOpen(false)} className="block text-green-400 hover:text-green-200">
-            Contact
-          </Link>
+        <div className="md:hidden bg-black px-4 pb-4 space-y-2">
+          <Link to="/" onClick={() => setIsOpen(false)} className={mobileLinkClass('/')}>Accueil</Link>
+          <Link to="/about" onClick={() => setIsOpen(false)} className={mobileLinkClass('/about')}>A-propos</Link>
+          <Link to="/projects" onClick={() => setIsOpen(false)} className={mobileLinkClass('/projects')}>Projets</Link>
+          <Link to="/contact" onClick={() => setIsOpen(false)} className={mobileLinkClass('/contact')}>Contact</Link>
         </div>
       )}
     </nav>
