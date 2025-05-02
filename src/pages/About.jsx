@@ -57,7 +57,7 @@ function About() {
 
   // Technical skills data
   const skills = {
-    languages: ['JavaScript/TypeScript', 'Python', 'PHP', 'Swift/Kotlin', 'Go'],
+    languages: ['JavaScript/TypeScript', 'Python', 'C++', 'Swift/Kotlin', 'Java'],
     frontend: ['React.js', 'React Native', 'Vue.js', 'Angular', 'HTML5/CSS3/SASS', 'TailwindCSS'],
     backend: ['Node.js', 'Django/Flask', 'Laravel', 'API RESTful', 'GraphQL', 'Microservices'],
     devops: ['Git/GitHub/GitLab', 'Docker', 'Kubernetes', 'AWS/Azure/GCP', 'CI/CD', 'Terraform']
@@ -183,7 +183,7 @@ function About() {
               key={i} 
               className="border border-green-400/30" 
               style={{
-                boxShadow: i % 7 === 0 ? '0 0 15px rgba(74, 222, 128, 0.4)' : 'none'
+                boxShadow: i % 7 === 0 ? '0 0 15px rgba(74  Q2789`<ADFJKL;, 222, 128, 0.4)' : 'none'
               }}
             />
           ))}
@@ -206,7 +206,7 @@ function About() {
                   Toujours curieux, j'aime apprendre de nouvelles technologies pour améliorer mes projets.
                 </p>
               </div>
-              
+              {/**Image instruisant le code */}
               <div className={`${theme.darkBgAlt} p-6 rounded-lg border border-gray-800 flex flex-col items-center justify-center transform relative hover:scale-105 transition-all duration-300`}
                    style={{ boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)' }}>
                 <div className={`flex items-center justify-center w-20 h-20 mb-4 ${theme.darkBg} rounded-full border-2 ${theme.neonGreenBorder}`}
@@ -237,7 +237,7 @@ function About() {
           <div className="flex overflow-x-auto no-scrollbar">
             {[
               { id: 'philosophy', label: 'Philosophie' },
-              { id: 'resume', label: 'CV & Parcours' }, // Nouvel onglet
+              { id: 'resume', label: 'CV & Parcours' },
               { id: 'expertise', label: 'Expertise' },
               { id: 'services', label: 'Services' },
               { id: 'process', label: 'Processus' }
@@ -468,7 +468,7 @@ function About() {
               
               <div className="text-center mt-6">
                 <Link 
-                  to="/portfolio" 
+                  to="/projects" 
                   className={`inline-flex items-center px-6 py-2 border ${theme.neonGreenBorder} text-green-400 rounded-lg hover:bg-green-400/10 transition-all duration-300`}
                 >
                   Voir tout mon portfolio <Zap size={16} className="ml-2" />

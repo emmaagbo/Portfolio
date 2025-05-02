@@ -57,7 +57,7 @@ const Projects = () => {
           {/* Filtres */}
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             <button 
-              onClick={() => filterProjects('all')} 
+              onClick={() => filterProjects('all')}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${filter === 'all' ? 'bg-green-500 text-gray-900' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'}`}
             >
               Tous

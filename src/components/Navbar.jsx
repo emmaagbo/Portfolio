@@ -1,15 +1,18 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-//import { ReactComponent as Logo} from '../assets/logo-manu.svg'
-import Logo from '../assets/logo-manu.svg'
+import { useState} from 'react';
+import Logo from '../assets/logo-2.svg'
 import {Code} from 'lucide-react';
-
 
 const theme = {
   neonGreen: 'text-green-400'
 }
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isFilter, setIsFilter] = useState('Acceuil')
+  {/**useEffect(()=>{
+    const nav =()=>
+  }) */}
 
   return (
     <nav className="bg-black shadow-md">
@@ -20,15 +23,15 @@ function Navbar() {
           <div className="flex items-center">
             <Link to="/" className="text-4xl font-bold text-green-400 flex">
               {/*<Logo className="h-10 w-10"/>*/}
-              <img src={Logo} alt='logo' className="h-20"/>
-              {/*M<Code size={40} className={theme.neonGreen}/>nu<span className="text-green-200">Tech</span>*\}
+              <img src={Logo} alt='logo' className="h-40"/>
               {/*<Code size={40} className={theme.neonGreen} />*/}
+              {/**M<Code size={40} className={theme.neonGreen}/>nu<span className="text-green-200">Tech</span> */}
             </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
-            <Link to="/" className="text-green-400 hover:text-green-200 transition">
+          <div className="hidden md:flex space-x-8 items-center nom">
+            <Link to="/" className="text-green-400 hover:text-green-200 transition translate-color">
               Accueil
             </Link>
             <Link to="/about" className="text-green-400 hover:text-green-200 transition">

@@ -4,7 +4,7 @@ import photoReact from '../assets/photo-accueil.png'
 import appli from '../assets/about-photo/appli.jpg';
 import bord from '../assets/about-photo/bord.jpg';
 import comm from '../assets/about-photo/e-comm.jpg';
-import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import { Github, Linkedin, Mail, ChevronDown, Send} from 'lucide-react';
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,8 +51,9 @@ function Home() {
 
             <Link
               to="/contact"
-              className="bg-transparent border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-gray-900 font-semibold py-3 px-8 rounded-lg transition duration-300"
+              className="bg-transparent inline-flex border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-gray-900 font-semibold py-3 px-4 rounded-lg transition duration-300"
             >
+              <Send size={20} className="mr-2"/>
               Me contacter
             </Link>
           </div>
