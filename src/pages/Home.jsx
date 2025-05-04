@@ -1,24 +1,32 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import photoReact from '../assets/photo-accueil.png'
+import { Github, Linkedin, Mail, ChevronDown, Send } from 'lucide-react';
+// Import des images
+import photoReact from '../assets/photo-accueil.png';
 import appli from '../assets/about-photo/appli.jpg';
 import bord from '../assets/about-photo/bord.jpg';
 import comm from '../assets/about-photo/e-comm.jpg';
-import { Github, Linkedin, Mail, ChevronDown, Send} from 'lucide-react';
 
 function Home() {
+  
+  /**État pour gérer l'animation d'apparition*/
   const [isVisible, setIsVisible] = useState(false);
-
+  
+  /**Déclenche l'animation au chargement de la page*/
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 text-white">
-      {/* Hero Section avec Animation */}
+      {/* 
+        SECTION HERO 
+        Première section visible avec présentation principale 
+      */}
       <section className="relative h-screen flex items-center justify-center px-4 m-12">
         <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          {/* Profil Image */}
+          
+          {/* Photo de profil */}
           <div className="mb-8 flex justify-center">
             <div className="relative w-40 h-55 rounded-full overflow-hidden border-4 border-green-400 shadow-lg">
               <img 
@@ -29,18 +37,22 @@ function Home() {
             </div>
           </div>
 
+          {/* Titre principal avec dégradé de couleur */}
           <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-6">
             Salut, moi c'est Emmanuel AGBOTOEDO Mahoukpégo
           </h1>
           
+          {/* Sous-titre */}
           <h2 className="text-2xl md:text-3xl text-gray-300 mb-8">
             Développeur Web & Mobile
           </h2>
           
+          {/* Description */}
           <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
             Passionné par la création de sites web modernes, performants et d'applications mobiles intuitives qui répondent aux besoins des utilisateurs.
           </p>
 
+          {/* Boutons d'action */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <Link
               to="/about"
@@ -58,7 +70,7 @@ function Home() {
             </Link>
           </div>
 
-          {/* Icons reseaux sociaux */}
+          {/* Réseaux sociaux */}
           <div className="flex justify-center space-x-6 mb-16">
             <a href="https://github.com/emmaagbo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors">
               <Github size={24} />
@@ -71,14 +83,17 @@ function Home() {
             </a>
           </div>
 
-          {/* Scroll Down Indicator */}
+          {/* Indicateur de scroll */}
           <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 animate-bounce">
             <ChevronDown size={32} className="text-green-400" />
           </div>
         </div>
       </section>
 
-      {/* Section Projects avec Cardre */}
+      {/* 
+        SECTION PROJETS 
+        Présentation des projets récents sous forme de cartes 
+      */}
       <section className="py-20 px-4 bg-gray-800">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-2 text-green-400">Mes Projets</h2>
@@ -88,11 +103,13 @@ function Home() {
             Découvrez certains de mes projets récents, alliant innovation et performance pour créer des expériences utilisateur exceptionnelles.
           </p>
           
+          {/* Grille de projets */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Project Card 1 */}
+            
+            {/* Carte Projet 1 - Application Mobile */}
             <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
               <div className="h-48 bg-gray-700 flex items-center justify-center">
-                <img src={appli} alt="Projet 1" className="w-full h-full object-cover" />
+                <img src={appli} alt="Projet Application Mobile" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-green-400">Application Mobile</h3>
@@ -101,10 +118,10 @@ function Home() {
               </div>
             </div>
             
-            {/* Project Card 2 */}
+            {/* Carte Projet 2 - E-commerce */}
             <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
               <div className="h-48 bg-gray-700 flex items-center justify-center">
-                <img src={comm} alt="Projet 2" className="w-full h-full object-cover" />
+                <img src={comm} alt="Projet E-commerce" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-green-400">Site E-commerce</h3>
@@ -113,10 +130,10 @@ function Home() {
               </div>
             </div>
             
-            {/* Project Card 3 */}
+            {/* Carte Projet 3 - Tableau de bord */}
             <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
               <div className="h-48 bg-gray-700 flex items-center justify-center">
-                <img src={bord} alt="Projet 3" className="w-full h-full object-cover" />
+                <img src={bord} alt="Projet Tableau de bord" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-green-400">Tableau de Bord</h3>
@@ -126,6 +143,7 @@ function Home() {
             </div>
           </div>
           
+          {/* Bouton vers la page projets */}
           <div className="text-center mt-12">
             <Link
               to="/projects"
@@ -137,7 +155,10 @@ function Home() {
         </div>
       </section>
 
-      {/* Contact Section with Form */}
+      {/* 
+        SECTION CONTACT 
+        Informations de contact et liens 
+      */}
       <section className="py-20 px-4 bg-gray-900">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-2 text-green-400">Contactez-moi</h2>
@@ -147,19 +168,23 @@ function Home() {
             Vous avez un projet en tête ou une opportunité de collaboration ? N'hésitez pas à me contacter pour en discuter !
           </p>
           
+          {/* Cartes de contact */}
           <div className="flex flex-wrap justify-center gap-6">
+            {/* Carte Email */}
             <div className="w-full md:w-auto bg-gray-800 p-6 rounded-lg text-center flex flex-col items-center transition-transform hover:scale-105">
               <Mail size={32} className="text-green-400 mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-white">Email</h3>
               <p className="text-gray-400">oemmanuel@gmail.com</p>
             </div>
             
+            {/* Carte LinkedIn */}
             <div className="w-full md:w-auto bg-gray-800 p-6 rounded-lg text-center flex flex-col items-center transition-transform hover:scale-105">
               <Linkedin size={32} className="text-green-400 mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-white">LinkedIn</h3>
               <p className="text-gray-400">linkedin.com/in/emmanuel</p>
             </div>
             
+            {/* Carte GitHub */}
             <div className="w-full md:w-auto bg-gray-800 p-6 rounded-lg text-center flex flex-col items-center transition-transform hover:scale-105">
               <Github size={32} className="text-green-400 mb-4" />
               <h3 className="text-xl font-semibold mb-2 text-white">GitHub</h3>
@@ -167,6 +192,7 @@ function Home() {
             </div>
           </div>
           
+          {/* Bouton vers le formulaire de contact */}
           <div className="text-center mt-12">
             <Link
               to="/contact"
