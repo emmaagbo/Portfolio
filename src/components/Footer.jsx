@@ -57,7 +57,7 @@ function Footer() {
           </div>
         </div>
 
-        {/* Colonne 2: Navigation */}
+        {/** Colonne 2: Navigation */}
         <div>
           <h3 className="text-lg font-medium text-white mb-4">Navigation</h3>
           <ul className="space-y-2">
@@ -110,7 +110,7 @@ function Footer() {
             Mentions légales <ExternalLink size={14} className="ml-1" />
           </a>
           <a href="#" className="hover:text-white flex items-center">
-            Politique de confidentialité <ExternalLink size={14} className="ml-1" />
+            Politique de confidentialité<ExternalLink size={14} className="ml-1" />
           </a>
         </div>
       </div>
