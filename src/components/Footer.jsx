@@ -38,7 +38,6 @@ function Footer() {
         <div>
           <Link to="/" className="flex items-center mb-4 space-x-2">
             <img src={Logo} alt="logo" className="h-12 sm:h-16 object-contain" />
-            <span className="text-white text-xl font-semibold">ManuTech</span>
           </Link>
           <p className="mb-4">Développeur web passionné par la création d’expériences numériques fluides et impactantes.</p>
           <div className="flex space-x-4 mt-6">
