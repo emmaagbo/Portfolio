@@ -10,10 +10,10 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
-    { id: "home", label: "Accueil" },
-    { id: "about", label: "À propos" },
-    { id: "projects", label: "Projets" },
-    { id: "contact", label: "Contact" },
+    { id: "/", label: "Accueil" },
+    { id: "/about", label: "À propos" },
+    { id: "/projects", label: "Projets" },
+    { id: "/contact", label: "Contact" },
   ];
 
   const socialLinks = [
@@ -62,12 +62,13 @@ function Footer() {
           <ul className="space-y-2">
             {navLinks.map(link => (
               <li key={link.id}>
-                <button
+                <Link
+                  to={link.id}
                   onClick={() => scrollToSection(link.id)}
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   {link.label}
-                </button>
+                </Link>
               </li>
             ))}
           </ul>
