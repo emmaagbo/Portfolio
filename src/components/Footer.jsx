@@ -23,11 +23,6 @@ function Footer() {
     { id: "email", label: "Email", icon: Mail, url: "mailto:mahoukpegoemmanuel@gmail.com" },
   ];
 
-  const scrollToSection = (sectionId) => {
-    const el = document.getElementById(sectionId);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <footer className="bg-black text-gray-400 relative border-t border-gray-800 w-full">
       {/* Effet visuel en haut */}
@@ -64,7 +59,6 @@ function Footer() {
               <li key={link.id}>
                 <Link
                   to={link.id}
-                  onClick={() => scrollToSection(link.id)}
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   {link.label}
